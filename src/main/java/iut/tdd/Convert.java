@@ -4,100 +4,125 @@ public class Convert {
 	public String num2text(String input) {
 		int taille=input.length();
 		String result="";
+		int i=0;
 		while (taille>0){
-			char l=input.charAt(0);
+			char l=input.charAt(i);
 			if (taille==4){
-				result="mille";
+				result+="mille";
 			}else if(taille==3){
-				result="cent";
+				result+="cent";
 			}else if(taille==2){
-				char l2=input.charAt(1);
+				char l2=input.charAt(i+1);
 				if (l=='1'){
 					if (l2=='1'){
-						result="onze";
+						result+="onze";
+						taille=taille-1;
 					}else if (l2=='2'){
-						result="douze";
+						result+="douze";
+						taille=taille-1;
 					}else if (l2=='3'){
-						result="treize";
+						result+="treize";
+						taille=taille-1;
 					}else if (l2=='4'){
-						result="quatorze";
+						result+="quatorze";
+						taille=taille-1;
 					}else if (l2=='5'){
-						result="quinze";
+						result+="quinze";
+						taille=taille-1;
 					}else if (l2=='6'){
-						result="seize";
+						result+="seize";
+						taille=taille-1;
 					}else{
-						result="dix";
+						result+="dix";
 					}
 				}else if (l=='2'){
-					result="vinght";
+					result+="vinght";
 				}else if (l=='3'){
-					result="trente";
+					result+="trente";
 				}else if (l=='4'){
-					result="quarente";
+					result+="quarente";
 				} if (l=='6'){
-					result="soixante";
+					result+="soixante";
 				}else if (l=='7'){
 					if (l2=='1'){
-						result="soixante-et-onze";
+						result+="soixante-et-onze";
+						taille=taille-1;
 					}else if (l2=='2'){
-						result="soixante-douze";
+						result+="soixante-douze";
+						taille=taille-1;
 					}else if (l2=='3'){
-						result="soixante-treize";
+						result+="soixante-treize";
+						taille=taille-1;
 					}else if (l2=='4'){
-						result="soixante-quatorze";
+						result+="soixante-quatorze";
+						taille=taille-1;
 					}else if (l2=='5'){
-						result="soixante-quinze";
+						result+="soixante-quinze";
+						taille=taille-1;
 					}else if (l2=='6'){
-						result="soixante-seize";
+						result+="soixante-seize";
+						taille=taille-1;
 					}else{
-						result="soixante-dix";
+						result+="soixante-dix";
 					}
 				}else if (l=='8'){
-					result="quatre-vinght";
+					result+="quatre-vinght";
 				}else if (l=='9'){
 					if (l2=='1'){
-						result="quatre-vinght-onze";
+						result+="quatre-vinght-onze";
+						taille=taille-1;
 					}else if (l2=='2'){
-						result="quatre-vinght-douze";
+						result+="quatre-vinght-douze";
+						taille=taille-1;
 					}else if (l2=='3'){
-						result="quatre-vinght-treize";
+						result+="quatre-vinght-treize";
+						taille=taille-1;
 					}else if (l2=='4'){
-						result="quatre-vinght-quatorze";
+						result+="quatre-vinght-quatorze";
+						taille=taille-1;
 					}else if (l2=='5'){
-						result="quatre-vinght-quinze";
+						result+="quatre-vinght-quinze";
+						taille=taille-1;
 					}else if (l2=='6'){
-						result="quatre-vinght-seize";
+						result+="quatre-vinght-seize";
+						taille=taille-1;
 					}else{
-						result="quatre-vinght-dix";
+						result+="quatre-vinght-dix";
 					}
 				}
 			}else if (taille==1){
 				if (l=='0'){
-					result="zero";
+					if (i==0){
+						result="zero";
+					}else{
+						result=result.substring(0,result.length()-1);
+					}
 				}else if (l=='1'){
-					result="un";
+					result+="un";
 				}else if (l=='2'){
-					result="deux";
+					result+="deux";
 				}else if (l=='3'){
-					result="trois";
+					result+="trois";
 				}else if (l=='4'){
-					result="quatre";
+					result+="quatre";
 				}else if (l=='5'){
-					result="cinq";
+					result+="cinq";
 				}else if (l=='6'){
-					result="six";
+					result+="six";
 				}else if (l=='7'){
-					result="sept";
+					result+="sept";
 				}else if (l=='8'){
-					result="huit";
+					result+="huit";
 				}else if (l=='9'){
-					result="neuf";
+					result+="neuf";
 				}
 			}
 			taille=taille-1;
-			return result;
+			i=i+1;
+			result+="-";
 		}
-		return null;
+		result=result.substring(0,result.length()-1);
+		return result;
 	}
 	public static String text2num(String input) {
 		return null;
