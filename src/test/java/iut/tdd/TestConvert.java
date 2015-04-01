@@ -42,4 +42,39 @@ public class TestConvert {
 		String actual = myConvert.num2text(input);
 		Assert.assertEquals(expected, actual);
 	}
+	public void test_num2text_cinq () {
+		String input = "5";
+		String expected = "cinq";
+		Convert myConvert = new Convert();
+		String actual = myConvert.num2text(input);
+		Assert.assertEquals(expected, actual);
+	}
+	public void test_num2text_six () {
+		String input = "6";
+		String expected = "six";
+		Convert myConvert = new Convert();
+		String actual = myConvert.num2text(input);
+		Assert.assertEquals(expected, actual);
+	}
+	public void test_num2text_sept () {
+		String input = "7";
+		String expected = "sept";
+		Convert myConvert = new Convert();
+		String actual = myConvert.num2text(input);
+		Assert.assertEquals(expected, actual);
+	}
+	public void test_num2text_huit () {
+		String input = "8";
+		String expected = "huit";
+		Convert myConvert = new Convert();
+		String actual = myConvert.num2text(input);
+		Assert.assertEquals(expected, actual);
+	}	
+	public void test_num2text_neuf () {
+	String input = "9";
+	String expected = "neuf";
+	Convert myConvert = new Convert();
+	String actual = myConvert.num2text(input);
+	Assert.assertEquals(expected, actual);
+	}
 }
